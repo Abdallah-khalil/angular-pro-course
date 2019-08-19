@@ -1,7 +1,7 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-auth-remember',
+  selector: 'auth-remember',
   template: `
     <label>
       <input type="checkbox" (change)="onChecked($event.target.checked)" />
