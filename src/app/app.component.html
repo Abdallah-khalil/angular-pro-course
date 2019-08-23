@@ -1,17 +1,18 @@
 <div>
-  <auth-form (submitted)="createUser($event)">
-    <h3>Create account</h3>
+  <button (click)="destroyComponent()">Destroy</button>
+  <button (click)="moveComponent()">Move</button>
+  <div #entry></div>
 
-    <button type="submit">
-      Join Us
-    </button>
-  </auth-form>
+  <div #templEntry></div>
+  <!-- We can use ngTemplateOutlet inplace of using this viewContainer templEntry Element -->
+  <ng-container [ngTemplateOutlet]="tmpl" [ngTemplateOutletContext]="ctx"></ng-container>
 
-  <auth-form (submitted)="loginUser($event)">
-    <h3>Login</h3>
+  <ng-template #tmpl2>
+    Frontend Developer
+  </ng-template>
 
-    <button type="submit">
-      Login
-    </button>
-  </auth-form>
+
+  <ng-template #tmpl let-name let-location="location">
+    {{ name }} , {{ location }}
+  </ng-template>
 </div>
